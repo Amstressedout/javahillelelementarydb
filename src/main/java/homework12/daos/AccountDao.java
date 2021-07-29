@@ -110,7 +110,6 @@ public class AccountDao {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NUMBER_BY_VALUE)) {
             preparedStatement.setDouble(1, value);
-            preparedStatement.execute();
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

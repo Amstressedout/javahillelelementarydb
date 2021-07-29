@@ -41,13 +41,13 @@ public class Main {
 
         System.out.println("***********************************************************");
 
-        Clients client1 = clientDao.findClientsById(3);
+        Clients client1 = clientDao.findClientsById(12);
         System.out.println("Client before update:\n" + client1);
-        client1.setPhone(380934413233232L);
+        client1.setPhone(380913233232L);
         clientDao.updateClients(client1);
         System.out.println("Client after update:\n" + client1);
 
-        System.out.println(clientDao.findClientsByPhone(380934413233232L));
+        System.out.println(clientDao.findClientsByPhone(380913233232L));
 
         System.out.println("***********************************************************");
 
@@ -72,7 +72,7 @@ public class Main {
 
         Accounts accounts = new Accounts();
         accounts.setClient_id(23);
-        accounts.setNumber("77 33 44 22");
+        accounts.setNumber("777 333 444 222");
         accounts.setValue(707.07);
         accountDao.insertAccount(accounts);
 
@@ -86,7 +86,7 @@ public class Main {
 
         System.out.println("***********************************************************");
 
-        Accounts account = accountDao.findByIdAccounts(3);
+        Accounts account = accountDao.findByIdAccounts(1);
         System.out.println("Account before update:\n" + account);
         account.setNumber("77 777 777 777");
         accountDao.updateAccount(account);
@@ -95,7 +95,7 @@ public class Main {
         System.out.println("***********************************************************");
 
         System.out.println(" Accounts where value bigger than given value: ");
-        for (String number : accountDao.findAccountNumberBiggerValue(1000.00)) {
+        for (String number : accountDao.findAccountNumberBiggerValue(1000.01)) {
             System.out.println(number);
         }
 
@@ -107,21 +107,21 @@ public class Main {
         }
 
         Statuses status = new Statuses();
-        status.setAlias("PREMIUM");
-        status.setDescription("PREMIUM status includes special manager service. ");
+        status.setAlias("KRITIN");
+        status.setDescription("KRITIN service. ");
         statusesDao.insertStatuses(status);
 
         System.out.println("***********************************************************");
 
         System.out.println("BEFORE DELETE");
 
-        statusesDao.deleteStatuses(4);
+        statusesDao.deleteStatuses(2);
 
         System.out.println("AFTER DELETE");
 
         System.out.println("***********************************************************");
 
-        Statuses statuses1 = statusesDao.findStatusesById(5);
+        Statuses statuses1 = statusesDao.findStatusesById(19);
         System.out.println("Status before update:\n" + statuses1);
         statuses1.setDescription("Premium service.");
         statusesDao.updateStatuses(statuses1);

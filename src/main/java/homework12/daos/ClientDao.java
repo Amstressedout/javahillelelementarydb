@@ -72,7 +72,7 @@ public class ClientDao {
 
         try ( Connection connection = Database.getConnection();
             PreparedStatement statement = connection.prepareStatement(SELECT_BY_PHONE_CLIENTS)) {
-            statement.setLong(3, phone);
+            statement.setLong(12, phone);
             statement.execute();
             ResultSet resultSet = statement.executeQuery();
 
