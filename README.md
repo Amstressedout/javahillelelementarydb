@@ -1,1 +1,1 @@
-# javahillelelementarydb
+# MAVEN PROJECT WITH DATABASE
